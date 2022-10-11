@@ -1,14 +1,13 @@
-package com.example.tddtest
+package com.example.tddtest.home
 
-import com.example.tddtest.home.HomeViewModel
+import com.example.tddtest.TestCoroutineRule
 import com.example.tddtest.home.api.HomeRepository
 import com.example.tddtest.home.model.PostDto
+import com.example.tddtest.testPostDtoData
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.*
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Assert
@@ -39,14 +38,11 @@ class HomeViewModelTest {
     @Test
     fun `on home view model init validate loading state default value as true`() {
 
-        //Assemble
+            //Act
+            testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
 
-
-        //Act
-        testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
-
-        //Assert
-        Assert.assertEquals(true, testObject.viewState.value.isLoading)
+            //Assert
+            Assert.assertEquals(false, testObject.viewState.value.isLoading)
     }
 
     @Test
@@ -72,7 +68,6 @@ class HomeViewModelTest {
 
             //Act
             testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
-
             //Assert
             Assert.assertEquals(listOf(post1, post2), testObject.viewState.value.postsListData)
             Assert.assertEquals(false, testObject.viewState.value.isLoading)
@@ -88,7 +83,6 @@ class HomeViewModelTest {
 
             //Act
             testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
-
             //Assert
             Assert.assertEquals("Network Error", testObject.viewState.value.error)
         }
@@ -108,9 +102,8 @@ class HomeViewModelTest {
             )
 
             //Act
-            val testObject =
-                HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
-
+            val testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
+            testObject.fetchPostsData()
             //Assert
             Assert.assertEquals("HTTP 500 Response.error()", testObject.viewState.value.error)
         }
@@ -131,7 +124,6 @@ class HomeViewModelTest {
 
             //First Act
             testObject = HomeViewModel(homeRepository = homeRepository, dispatcher = testDispatcher)
-
             //Error Assertion
             Assert.assertEquals("Network Error", testObject.viewState.value.error)
 

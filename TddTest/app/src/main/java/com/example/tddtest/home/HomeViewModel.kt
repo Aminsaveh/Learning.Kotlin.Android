@@ -4,11 +4,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.tddtest.BaseViewModel
 import com.example.tddtest.home.api.HomeRepository
 import com.example.tddtest.home.model.PostDto
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.filterNot
+import kotlinx.coroutines.flow.filterNotNull
 
 
 class HomeViewModel(private val homeRepository: HomeRepository, private val dispatcher: CoroutineDispatcher = Dispatchers.IO) :
@@ -23,6 +22,7 @@ class HomeViewModel(private val homeRepository: HomeRepository, private val disp
     }
 
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        println("hii" + throwable.message)
         viewModelScope.launch(dispatcher) {
             setState {
                 copy(
@@ -37,13 +37,18 @@ class HomeViewModel(private val homeRepository: HomeRepository, private val disp
 
 
     init {
-        fetchPostsData()
+        viewModelScope.launch(dispatcher + exceptionHandler){
+            fetchPostsData()
+        }
+
     }
 
     fun fetchPostsData() {
         viewModelScope.launch(dispatcher + exceptionHandler) {
             homeRepository.getPostsData().collect{
-              postsData ->  updatePostsDataToView(postsData)
+              postsData ->
+                println("hii" + postsData)
+                updatePostsDataToView(postsData)
             }
         }
     }
