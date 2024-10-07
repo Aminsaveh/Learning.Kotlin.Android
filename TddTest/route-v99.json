@@ -1,0 +1,240 @@
+{
+  "arrow": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#FFFFFF"
+    },
+    "casingColor": {
+      "light": "#00FFFFFF",
+      "dark": "#00FFFFFF"
+    },
+    "head": {
+      "scale": {
+        "default": {
+          "zoomLevels": [
+            10,
+            22
+          ],
+          "scales": [
+            0.5,
+            0.5
+          ]
+        },
+        "casing": {
+          "zoomLevels": [
+            10,
+            22
+          ],
+          "scales": [
+            0.2,
+            0.8
+          ]
+        }
+      }
+    },
+    "shaft": {
+      "scale": {
+        "default": {
+          "zoomLevels": [
+            10,
+            22
+          ],
+          "scales": [
+            2.6,
+            13
+          ]
+        },
+        "casing": {
+          "zoomLevels": [
+            10,
+            22
+          ],
+          "scales": [
+            2.6,
+            13
+          ]
+        }
+      }
+    }
+  },
+  "line": {
+    "traveledColor": {
+      "default": {
+        "light": "#00FFFFFF",
+        "dark": "#00FFFFFF"
+      },
+      "casing": {
+        "light": "#00FFFFFF",
+        "dark": "#00FFFFFF"
+      }
+    },
+    "inactiveLegColor": {
+      "light": "#00FFFFFF",
+      "dark": "#00FFFFFF"
+    },
+    "primary": {
+      "color": {
+        "default": {
+          "light": "#FFFFFF",
+          "dark": "#1298FF"
+        },
+        "casing": {
+          "light": "#FFFFFF",
+          "dark": "#004EEC"
+        },
+        "lowCongestion": {
+          "light": "#FFFFFF",
+          "dark": "#1298FF"
+        },
+        "moderateCongestion": {
+          "light": "#FFCA18",
+          "dark": "#FFCA18"
+        },
+        "heavyCongestion": {
+          "light": "#FF8142",
+          "dark": "#FF8142"
+        },
+        "severeCongestion": {
+          "light": "#CC322F",
+          "dark": "#CC322F"
+        },
+        "unknownCongestion": {
+          "light": "#FFFFFF",
+          "dark": "#1298FF"
+        }
+      },
+      "scale": {
+        "default": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            2,
+            4,
+            5,
+            9,
+            16
+          ]
+        },
+        "casing": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            4,
+            7,
+            8,
+            13,
+            24
+          ]
+        },
+        "traffic": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            2,
+            4,
+            5,
+            9,
+            16
+          ]
+        }
+      }
+    },
+    "alternative": {
+      "color": {
+        "default": {
+          "light": "#B1B2B2",
+          "dark": "#B1B2B2"
+        },
+        "casing": {
+          "light": "#B1B2B2",
+          "dark": "#B1B2B2"
+        },
+        "lowCongestion": {
+          "light": "#B1B2B2",
+          "dark": "#B1B2B2"
+        },
+        "moderateCongestion": {
+          "light": "#FFCA18",
+          "dark": "#FFCA18"
+        },
+        "heavyCongestion": {
+          "light": "#FF8142",
+          "dark": "#FF8142"
+        },
+        "severeCongestion": {
+          "light": "#CC322F",
+          "dark": "#CC322F"
+        },
+        "unknownCongestion": {
+          "light": "#B1B2B2",
+          "dark": "#B1B2B2"
+        }
+      },
+      "scale": {
+        "default": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            2,
+            4,
+            5,
+            9,
+            16
+          ]
+        },
+        "casing": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            4,
+            7,
+            8,
+            13,
+            24
+          ]
+        },
+        "traffic": {
+          "zoomLevels": [
+            9,
+            12,
+            16,
+            17,
+            18
+          ],
+          "scales": [
+            2,
+            4,
+            5,
+            9,
+            16
+          ]
+        }
+      }
+    }
+  }
+}
